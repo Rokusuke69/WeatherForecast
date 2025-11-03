@@ -1,5 +1,6 @@
 // src/components/SearchForm.jsx
 import React, { useState } from 'react';
+import searchIcon from '../assets/search.png';
 
 const SearchForm = ({ onSearch, loading }) => {
   const [city, setCity] = useState('');

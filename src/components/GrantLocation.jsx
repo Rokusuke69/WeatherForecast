@@ -5,7 +5,7 @@ const GrantLocation = ({ onGrantAccess }) => {
   return (
     <div className="grant-location">
       <img 
-        src="/assets/location.png" 
+        src="../assets/location.png" 
         alt="Location Access" 
         className="grant-icon"
       />

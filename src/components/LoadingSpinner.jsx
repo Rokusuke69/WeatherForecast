@@ -5,7 +5,7 @@ const LoadingSpinner = () => {
   return (
     <div className="loading-spinner">
       <img 
-        src="/assets/loading.gif" 
+        src="../assets/loading.gif" 
         alt="Loading..." 
         className="spinner"
       />
