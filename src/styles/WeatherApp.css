@@ -1,0 +1,359 @@
+/* src/styles/WeatherApp.css */
+:root {
+  --color-primary: #112d4e;
+  --color-secondary: #3f72a3;
+  --color-accent: #679bcb;
+  --color-light: #e6e6e6;
+  --color-white: #ffffff;
+  --color-dark: #02021f;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  min-height: 100vh;
+  color: var(--color-light);
+}
+
+.weather-app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-white), var(--color-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+  color: var(--color-light);
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+/* Tab Styles */
+.tab-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: var(--color-light);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.tab.current-tab {
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: var(--shadow);
+}
+
+.tab:hover:not(.current-tab) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Search Form */
+.search-form {
+  margin-bottom: 2rem;
+}
+
+.search-input-container {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-btn {
+  background: var(--color-accent);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn:hover:not(:disabled) {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Weather Card */
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.weather-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.city-name {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.country-flag {
+  width: 30px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.weather-description {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.temperature {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.parameter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.parameter-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.parameter-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.parameter-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.parameter-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.parameter-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.parameter-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Grant Location */
+.grant-location {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.grant-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.grant-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.grant-description {
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.grant-btn {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.grant-btn:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Error State */
+.error-container {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.error-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .weather-app {
+    padding: 1rem;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .temperature {
+    font-size: 2.5rem;
+  }
+  
+  .parameter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .weather-main {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-container {
+    flex-direction: column;
+  }
+  
+  .weather-card {
+    padding: 1.5rem;
+  }
+  
+  .city-name {
+    font-size: 1.5rem;
+  }
+  
+  .temperature {
+    font-size: 2rem;
+  }
+}
